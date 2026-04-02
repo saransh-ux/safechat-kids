@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, BarChart, Bar, Legend, LabelList } from 'recharts';
 import { Link } from 'react-router-dom';
 
-const API_URL = 'http://localhost:5000/api';
+const API_URL = 'https://safechat-backend-s4g8.onrender.com/api';
 
 // Since the application is local and freshly spun up,
 // we will start with empty/initial stats unless the backend provides them.
@@ -184,7 +184,7 @@ export default function ParentDashboard({ session }) {
                                 <p className="text-slate-500 font-medium">Review your child's interactions with SafeChat Kids.</p>
                             </div>
                         </div>
-                        
+
                         <div className="space-y-6">
                             {!stats.chatHistory || stats.chatHistory.length === 0 ? (
                                 <p className="text-center text-slate-500 font-medium py-10">No messages found for this session yet.</p>
@@ -240,7 +240,7 @@ export default function ParentDashboard({ session }) {
                                             <YAxis dataKey="subject" type="category" axisLine={false} tickLine={false} tick={{ fill: '#64748b', fontWeight: 600 }} width={70} />
                                             <Tooltip cursor={{ fill: 'transparent' }} contentStyle={{ borderRadius: '1rem', border: 'none', boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)' }} />
                                             <Bar dataKey="count" fill="#3b82f6" radius={[0, 4, 4, 0]} barSize={24}>
-                                                <LabelList dataKey="count" position="right" fill="#64748b" fontWeight="bold"/>
+                                                <LabelList dataKey="count" position="right" fill="#64748b" fontWeight="bold" />
                                             </Bar>
                                             {!stats.topicBreakdown && <text x="50%" y="50%" textAnchor="middle" fill="#94a3b8" className="font-bold">No questions asked yet.</text>}
                                         </BarChart>

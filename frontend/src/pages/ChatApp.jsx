@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import AgeSelection from '../components/AgeSelection';
 
-const API_URL = 'http://localhost:5000/api';
+const API_URL = 'https://safechat-backend-s4g8.onrender.com/api';
 
 export default function ChatApp({ session, setSession }) {
     const navigate = useNavigate();
@@ -155,7 +155,7 @@ function ChatWindow({ session, onBack }) {
                 body: JSON.stringify({ sessionId: session.sessionId, age: session.age, message: userMsg })
             });
             const data = await res.json();
-            
+
             // If the message was flagged by the backend, update the optimistic user message
             if (data.isFlagged) {
                 setMessages(prev => {
@@ -251,7 +251,7 @@ function ChatWindow({ session, onBack }) {
                                     )}
 
                                     <div className={`p-3 md:p-5 rounded-2xl md:rounded-3xl shadow-sm border text-[15px] md:text-lg leading-relaxed relative group ${m.role === 'user' ? (m.isFlagged ? 'bg-red-500 text-white rounded-tr-sm border-red-600 animate-pulse' : 'bg-blue-500 text-white rounded-tr-sm border-blue-600') : 'bg-white text-slate-800 rounded-tl-sm border-slate-200'}`}>
-                                        
+
                                         {m.isFlagged && m.role === 'user' && (
                                             <div className="absolute -left-2 -top-2 md:-left-3 md:-top-3 bg-white rounded-full p-1 shadow-md z-10" title="Inappropriate word detected">
                                                 <AlertCircle className="w-4 h-4 md:w-6 md:h-6 text-red-500" />
