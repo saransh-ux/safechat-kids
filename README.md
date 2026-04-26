@@ -1,4 +1,4 @@
-# SafeChat Kids
+# SafeChat Kids- Kids Favourite Companion
 
 SafeChat Kids is a full-stack, AI-powered web chatbot application designed to provide a safe, educational, and engaging environment for children and teenagers under 18. It promotes creativity, enforces healthy digital habits, and gives parents clear visibility into their child's learning journey.
 
